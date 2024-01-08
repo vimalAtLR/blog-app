@@ -1,5 +1,5 @@
 **Project Configuration**
-
+- File of postman collection - postman_collection.json
 - Install all the packages of node using "npm install" command
 - Install **prettier** and **ESLint** plugin. Follow the steps given in the following link, to install the document
   - https://code.visualstudio.com/docs/introvideos/extend

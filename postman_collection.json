@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "5ff044d6-3134-42c2-b348-d390fa593a53",
+		"name": "LR test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32194114"
+	},
+	"item": [
+		{
+			"name": "Article",
+			"item": [
+				{
+					"name": "Create article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"\",\n    \"nickname\": \"\",\n    \"content\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/create-article",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"create-article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create article with queue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"title2q\",\n    \"nickname\": \"nickname2q\",\n    \"content\": \"content2q\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/create-article-queue",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"create-article-queue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/list-article?page=1&limit=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"list-article"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get content of Article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/article-content/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"article-content",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"title1\",\n    \"message\": \"message2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/send-message",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"send-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Add comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"articleId\": \"\",\n    \"parentId\": null,\n    \"nickname\": \"\",\n    \"comment\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/add-comment",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"add-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add comment with Queue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"articleId\": \"\",\n    \"parentId\": null,\n    \"nickname\": \"\",\n    \"comment\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/add-comment-queue",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"add-comment-queue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/list-comments/:articleId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"list-comments",
+								":articleId"
+							],
+							"variable": [
+								{
+									"key": "articleId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
